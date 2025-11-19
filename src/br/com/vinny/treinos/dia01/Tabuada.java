@@ -7,14 +7,13 @@ public class Tabuada {
 
         Scanner sc = new Scanner(System.in);
         int tabuada;
-        int resultado;
 
         System.out.println("Digite a numero para Tabuada:");
         tabuada = sc.nextInt();
 
-        for (int i = 0; i < 11; i++) {
-            resultado = tabuada * i;
-            System.out.println(tabuada + " * " + i + " = " + resultado);
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(tabuada + " * " + i + " = " + (tabuada * i));
         }
     }
 }
+

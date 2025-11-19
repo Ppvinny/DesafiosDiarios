@@ -2,66 +2,121 @@ package br.com.vinny.treinos.dia01;
 
 import java.util.Scanner;
 
-public class CalculadoraSimples {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        public class CalculadoraSimples {
+            public static void main(String[] args) {
+                Scanner sc = new Scanner(System.in);
+                int opcao = 0;
+                float valor1, valor2, resultado;
 
-        int escolhe = 0;
-        int menu = 0;
-        float valor1;
-        float valor2;
-        float resultado;
+                while (opcao != 5) {
+                    System.out.println("""
+            Menu
+            1 - Soma
+            2 - Subtração
+            3 - Multiplicação
+            4 - Divisão
+            5 - Sair
+            """);
+                    opcao = sc.nextInt();
 
-        System.out.println("Calculadora Simples");
-        while (menu == 0) {
-            System.out.println("Menu \n" + "1 - Soma.\n" + "2 - Subtração \n" + "3 - Multiplicação \n" + "4 - Divisão \n" + "5 - sair");
-
-            escolhe = sc.nextInt();
-            if (escolhe > 5) {
-                System.out.println("Opção Invalida! ");
-            } else {
-                switch (escolhe) {
-                    case 1:
-                        System.out.println("Digite um numero: ");
-                        valor1 = sc.nextFloat();
-                        System.out.println("Digite outro numero: ");
-                        valor2 = sc.nextFloat();
-                        resultado = valor1 + valor2;
-                        System.out.println("A soma do " + valor1 + " + " + valor2 + " é igual a " + resultado + "\n");
-                        break;
-                    case 2:
-                        System.out.println("Digite um numero: ");
-                        valor1 = sc.nextFloat();
-                        System.out.println("Digite outro número: ");
-                        valor2 = sc.nextFloat();
-                        resultado = valor1 - valor2;
-                        System.out.println("A subtração de " + valor1 + " - " + valor2 + " é igual a " + resultado + "\n");
-                        break;
-                    case 3:
-                        System.out.printf("Digite um numero: ");
-                        valor1 = sc.nextFloat();
-                        System.out.println("Digite outro número: ");
-                        valor2 = sc.nextFloat();
-                        resultado = valor1 * valor2;
-                        System.out.println("A multiplicação de " + valor1 + " * " + valor2 + "é igual a " + resultado + "\n");
-                        break;
-                    case 4:
-                        do {
-                            System.out.println("Digite um numero maior que 0 : ");
+                    switch (opcao) {
+                        case 1 -> {
+                            System.out.println("Digite o primeiro número:");
                             valor1 = sc.nextFloat();
-                            System.out.println("Digite outro numero maior que 0: ");
+                            System.out.println("Digite o segundo número:");
                             valor2 = sc.nextFloat();
+                            System.out.println("Resultado: " + (valor1 + valor2));
                         }
-                        while (valor1 <= 0 || valor2 <= 0);
-                        resultado = valor1 / valor2;
-                        System.out.println("O divisão de " + valor1 + " / " + valor2 + " é igual a " + resultado + "\n");
-                        break;
-                    case 5:
-                        System.out.println("Encerrado!");
-                        menu = 5;
-                        break;
+                        case 2 -> {
+                            System.out.println("Digite o primeiro número:");
+                            valor1 = sc.nextFloat();
+                            System.out.println("Digite o segundo número:");
+                            valor2 = sc.nextFloat();
+                            System.out.println("Resultado: " + (valor1 - valor2));
+                        }
+                        case 3 -> {
+                            System.out.println("Digite o primeiro número:");
+                            valor1 = sc.nextFloat();
+                            System.out.println("Digite o segundo número:");
+                            valor2 = sc.nextFloat();
+                            System.out.println("Resultado: " + (valor1 * valor2));
+                        }
+                        case 4 -> {
+                            System.out.println("Digite o primeiro número:");
+                            valor1 = sc.nextFloat();
+                            System.out.println("Digite o segundo número:");
+                            valor2 = sc.nextFloat();
+
+                            if (valor2 == 0) {
+                                System.out.println("Erro: divisão por zero!");
+                            } else {
+                                System.out.println("Resultado: " + (valor1 / valor2));
+                            }
+                        }
+                        case 5 -> System.out.println("Encerrando...");
+                        default -> System.out.println("Opção inválida!");
+                    }
                 }
             }
         }
-    }
-}
+         //codigo antigo
+//        Scanner sc = new Scanner(System.in);
+//
+//        int escolhe = 0;
+//        int menu = 0;
+//        float valor1;
+//        float valor2;
+//        float resultado;
+//
+//        System.out.println("Calculadora Simples");
+//        while (menu == 0) {
+//            System.out.println("Menu \n" + "1 - Soma.\n" + "2 - Subtração \n" + "3 - Multiplicação \n" + "4 - Divisão \n" + "5 - sair");
+//
+//            escolhe = sc.nextInt();
+//            if (escolhe > 5) {
+//                System.out.println("Opção Invalida! ");
+//            } else {
+//                switch (escolhe) {
+//                    case 1:
+//                        System.out.println("Digite um numero: ");
+//                        valor1 = sc.nextFloat();
+//                        System.out.println("Digite outro numero: ");
+//                        valor2 = sc.nextFloat();
+//                        resultado = valor1 + valor2;
+//                        System.out.println("A soma do " + valor1 + " + " + valor2 + " é igual a " + resultado + "\n");
+//                        break;
+//                    case 2:
+//                        System.out.println("Digite um numero: ");
+//                        valor1 = sc.nextFloat();
+//                        System.out.println("Digite outro número: ");
+//                        valor2 = sc.nextFloat();
+//                        resultado = valor1 - valor2;
+//                        System.out.println("A subtração de " + valor1 + " - " + valor2 + " é igual a " + resultado + "\n");
+//                        break;
+//                    case 3:
+//                        System.out.printf("Digite um numero: ");
+//                        valor1 = sc.nextFloat();
+//                        System.out.println("Digite outro número: ");
+//                        valor2 = sc.nextFloat();
+//                        resultado = valor1 * valor2;
+//                        System.out.println("A multiplicação de " + valor1 + " * " + valor2 + "é igual a " + resultado + "\n");
+//                        break;
+//                    case 4:
+//                        do {
+//                            System.out.println("Digite um numero maior que 0 : ");
+//                            valor1 = sc.nextFloat();
+//                            System.out.println("Digite outro numero maior que 0: ");
+//                            valor2 = sc.nextFloat();
+//                        }
+//                        while (valor1 <= 0 || valor2 <= 0);
+//                        resultado = valor1 / valor2;
+//                        System.out.println("O divisão de " + valor1 + " / " + valor2 + " é igual a " + resultado + "\n");
+//                        break;
+//                    case 5:
+//                        System.out.println("Encerrado!");
+//                        menu = 5;
+//                        break;
+//                }
+//            }
+//        }
+//    }
